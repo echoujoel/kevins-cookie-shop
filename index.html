@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff9f1">
+  <title>Kevin's Cookie Shop Tycoon</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">🍪</div>
+        <div><p class="brand-name">Kevin's Cookie Shop</p><p class="brand-caption">A little shop with big dreams</p></div>
+      </div>
+      <div class="header-right"><span class="day-pill" id="day-pill">DAY 1 OF 30</span><button class="quiet-button" id="restart-button" type="button">Start over</button></div>
+    </header>
+
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Your first day starts now</p>
+        <h1 id="page-title">Make today<br>worth the batch.</h1>
+        <p>Plan your bake, set a fair price, and bring the neighborhood through the door.</p>
+      </div>
+      <div class="hero-art" aria-hidden="true">🥛</div>
+    </section>
+
+    <section class="stats" aria-label="Shop overview">
+      <article class="stat"><p class="stat-label">Cash on hand</p><p class="stat-value" id="cash-stat">$100.00</p></article>
+      <article class="stat"><p class="stat-label">Total profit</p><p class="stat-value" id="profit-stat">$0.00</p></article>
+      <article class="stat"><p class="stat-label">Cookies sold</p><p class="stat-value" id="sold-stat">0 <span class="stat-note">cookies</span></p></article>
+      <article class="stat"><p class="stat-label">Shop reputation</p><p class="stat-value" id="rep-stat">⭐ 3.0 <span class="stat-note">out of 5</span></p></article>
+    </section>
+
+    <div class="layout">
+      <section class="card decision-card" id="decision-card" aria-labelledby="decision-title">
+        <div class="section-heading">
+          <div><h2 id="decision-title">Today's game plan</h2><p>Choose your numbers before opening the shop.</p></div>
+          <span class="weather" id="market-tag">☀️ Steady foot traffic</span>
+        </div>
+        <form id="plan-form">
+          <div class="field">
+            <div class="field-top"><label for="bake-input">Cookies to bake</label><span class="field-hint">$0.50 ingredients each</span></div>
+            <div class="field-control"><input id="bake-input" name="bake" type="number" min="0" step="1" value="40" inputmode="numeric" aria-describedby="bake-foot"></div>
+            <div class="field-foot" id="bake-foot"><span>Unsold cookies don't carry over.</span><span id="bake-max">Up to 200</span></div>
+          </div>
+          <div class="field">
+            <div class="field-top"><label for="price-input">Price per cookie</label><span class="field-hint">Affects how many customers buy</span></div>
+            <div class="field-control"><span class="prefix">$</span><input id="price-input" name="price" type="number" min="0.25" max="20" step="0.25" value="2.00" inputmode="decimal"><span class="suffix">each</span></div>
+            <div class="field-foot"><span>Try $1.00–$5.00 to start.</span><span>Max $20.00</span></div>
+          </div>
+          <div class="field">
+            <div class="field-top"><label for="ad-input">Advertising budget</label><span class="field-hint">More buzz, more visitors</span></div>
+            <div class="field-control"><span class="prefix">$</span><input id="ad-input" name="advertising" type="number" min="0" step="1" value="10" inputmode="decimal"></div>
+            <div class="field-foot"><span>Word of mouth is free.</span><span id="ad-max">Max $80.00</span></div>
+          </div>
+          <div class="cost-preview"><span>Ingredients + advertising</span><strong id="cost-preview">$30.00</strong></div>
+          <button class="primary-button" id="open-button" type="submit">Open the shop <span aria-hidden="true">→</span></button>
+          <p class="decision-note" id="decision-note">Your ingredient and ad costs come out of today's cash.</p>
+        </form>
+      </section>
+
+      <div class="side-column">
+        <section class="card outcome-card" aria-labelledby="outcome-title" aria-live="polite">
+          <h2 id="outcome-title">Today's results</h2>
+          <p class="subhead" id="outcome-subhead">Your daily report will appear here after closing time.</p>
+          <div id="outcome-content"><div class="empty-state"><div class="icon" aria-hidden="true">📒</div><strong>Ready when you are</strong><span>Make a plan and open your shop to see how the day goes.</span></div></div>
+        </section>
+        <section class="card history-card" aria-labelledby="history-title">
+          <div class="history-title"><h2 id="history-title">Recent days</h2><span id="history-count">0 days closed</span></div>
+          <div id="history-content" class="history-empty">Your first day in business is just ahead.</div>
+        </section>
+      </div>
+    </div>
+    <footer>30 days to build a neighborhood favorite. One batch at a time.</footer>
+  </main>
+
+  <script src="game.js" defer></script>
+</body>
+</html>
+
